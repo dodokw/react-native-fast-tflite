@@ -28,7 +28,7 @@ declare global {
 // Installs the JSI bindings into the global namespace.
 console.log('Installing bindings...')
 const result = TensorflowModule.install() as boolean
-if (result !== true)
+if (result !== true && global.__loadTensorflowModel == null)
   console.error('Failed to install Tensorflow Lite bindings!')
 
 console.log('Successfully installed!')
